@@ -27,8 +27,8 @@ extension SignInVM {
         
         
         let parameters: [String: Any] = [
-            email: email,
-            password: password
+            "email": email,
+            "password": password
             ]
         
         do {
