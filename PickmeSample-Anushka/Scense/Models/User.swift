@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - TestModel
+// MARK: - UserModel
 struct UserModel: Codable {
     var token: String?
 }

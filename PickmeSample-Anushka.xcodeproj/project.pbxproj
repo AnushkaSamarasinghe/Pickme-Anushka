@@ -28,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD1584152E3B878B0093F0B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD6852A12E3B470B00882B31 /* PickmeSample-Anushka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PickmeSample-Anushka.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6852AF2E3B472200882B31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD6852B02E3B472200882B31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,12 +80,10 @@
 		BD6852B22E3B472200882B31 /* PickmeSample-Anushka */ = {
 			isa = PBXGroup;
 			children = (
-				BD6852CC2E3B4FD300882B31 /* Utilities */,
-				BD6852B72E3B473800882B31 /* Scense */,
 				BD6852B62E3B472D00882B31 /* App */,
+				BD6852B72E3B473800882B31 /* Scense */,
+				BD6852CC2E3B4FD300882B31 /* Utilities */,
 				BD6852AF2E3B472200882B31 /* Assets.xcassets */,
-				BD6852B02E3B472200882B31 /* ContentView.swift */,
-				BD6852B12E3B472200882B31 /* PickmeSample_AnushkaApp.swift */,
 			);
 			path = "PickmeSample-Anushka";
 			sourceTree = "<group>";
@@ -92,6 +91,9 @@
 		BD6852B62E3B472D00882B31 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				BD6852B12E3B472200882B31 /* PickmeSample_AnushkaApp.swift */,
+				BD6852B02E3B472200882B31 /* ContentView.swift */,
+				BD1584152E3B878B0093F0B0 /* Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -409,6 +411,7 @@
 				DEVELOPMENT_TEAM = 5S2USGV52L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PickmeSample-Anushka/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -437,6 +440,7 @@
 				DEVELOPMENT_TEAM = 5S2USGV52L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PickmeSample-Anushka/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

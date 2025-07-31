@@ -24,7 +24,7 @@ struct SignInView: View {
                     
                     Spacer()
                     
-                    CommonButton(title: "Login", action: {
+                    CommonButton(title: "Sign in", action: {
                        Task {
                             await loginAPICall()
                         }
