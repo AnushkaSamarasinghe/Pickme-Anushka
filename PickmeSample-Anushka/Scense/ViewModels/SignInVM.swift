@@ -17,10 +17,14 @@ class SignInVM {
     var user: UserModel?
 }
 
+public typealias CompletionHandler = (_ status: Bool, _ message: String) -> ()
+
 extension SignInVM {
     @MainActor
-    func proseedLogin() async {
+    func proseedLogin(completion: @escaping CompletionHandler) async {
         let endpoint = Constant.endpoint
+        
+        
         
         let parameters: [String: Any] = [
             email: email,
@@ -28,13 +32,27 @@ extension SignInVM {
             ]
         
         do {
-//            let userResponse = try await AFWrapper.shared.request(endpoint, method: .post, parameters: parameters)
+            let userResponse: UserModel = try await AFWrapper.shared.request(
+                endpoint,
+                method: .post,
+                parameters: parameters
+            )
             
-//            self.user = userResponse
+            self.user = userResponse
+            print(user?.token ?? "")
             
-        } catch let error as AFWrapper {
-            print("failed: \(error)")
+            if user?.token != "" {
+                isNavigateToHome = true
+            }
+            
+            completion(true, "User Data get Success.")
+            
+        } catch let error as AFWrapperError {
+            print(error.errorMessage)
+            completion(false, error.errorMessage)
+        } catch {
+            print("Failed to create user")
+            completion(false, "Failed to create user")
         }
-        
     }
 }

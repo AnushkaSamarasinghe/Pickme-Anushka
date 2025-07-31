@@ -22,10 +22,15 @@ struct PasswordField: View {
                 .foregroundStyle(.black)
             
             HStack {
-                SecureField("", text: $password)
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundStyle(.gray)
-                
+                if isShowPassword {
+                    TextField("", text: $password)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundStyle(.gray)
+                } else {
+                    SecureField("", text: $password)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundStyle(.gray)
+                }
                 Button(action: {
                     isShowPassword.toggle()
                 }, label: {

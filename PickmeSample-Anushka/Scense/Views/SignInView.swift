@@ -29,13 +29,15 @@ struct SignInView: View {
                             await loginAPICall()
                         }
                     })
+                    .disabled( vm.email == "" || vm.password == "")
+                    
                 }//: VStack
                 .padding(.horizontal, 16)
                 .navigationTitle("Sign In")
+                .navigationDestination(isPresented: $vm.isNavigateToHome) {
+                    HomeView()
+                }
             }//: ZStack
-//            .navigationDestination(for: vm.isNavigateToHome) { user in
-//                HomeView()
-//            }
         }
     }
 }
@@ -47,7 +49,12 @@ struct SignInView: View {
 extension SignInView {
     private func loginAPICall() async {
        Task {
-           await vm.proseedLogin()
+           await vm.proseedLogin() { Success,_  in
+               if Success {
+                   vm.isNavigateToHome = true
+                   print("Success login")
+               }
+           }
         }
     }
 }
